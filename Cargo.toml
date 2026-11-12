@@ -1,8 +1,21 @@
 [package]
-name = "file_integrity_monitor"
+name = "panic-check"
 version = "0.1.0"
 edition = "2024"
+description = "A small file integrity monitor: SHA-256 baselines that report added, modified and deleted files"
+license = "MIT"
+repository = "https://github.com/precious-adeyinka/panic-check"
+homepage = "https://github.com/precious-adeyinka/panic-check"
+documentation = "https://github.com/precious-adeyinka/panic-check#readme"
+readme = "README.md"
+keywords = ["security", "integrity", "sha256", "hashing", "cli"]
+categories = ["command-line-utilities"]
+exclude = ["baseline.txt", "test-dir/", "dist/", ".env", "*.json", "*.log", "target/"]
 
 [dependencies]
 clap = { version = "4.6.7", features = ["derive"] }
 sha2 = "0.11.1"
+
+[[bin]]
+name = "panic-check"
+path= "src/main.rs"
