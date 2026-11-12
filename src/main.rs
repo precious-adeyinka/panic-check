@@ -67,7 +67,6 @@ fn scan_dir(
     let entries = match fs::read_dir(dir) {
         Ok(entries) => entries,
         Err(e) => {
-            // eprintln!("Skipping folder {}: {}", dir.display(), e);
             skipped.push((dir.to_path_buf(), e.to_string()));
             return;
         }
@@ -77,7 +76,6 @@ fn scan_dir(
         let path = match entry {
             Ok(entry) => entry.path(),
             Err(e) => {
-                // eprintln!("Skipping entry in {}: {}", dir.display(), e);
                 skipped.push((dir.to_path_buf(), e.to_string()));
                 continue;
             }
